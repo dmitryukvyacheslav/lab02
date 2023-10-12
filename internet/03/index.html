@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Кофейня</title>
+		<meta charset="utf-8">
+	</head>~
+	<body>
+		<!-- Блок 1. Заголовок (чашка кофе, текст) -->
+		<div class="header">
+			<div class="header__logoname">
+				<img class="header__logo" src="img/icons/coffee.png">
+				<p class="header__name">
+					Лучший кофе в Новосибирске
+				</p>
+			</div>
+		</div>
+		
+		<!-- Блок 2. Справочный блок на фоне размытой картинки-->
+		<div class="about">
+			<img class="about__background" src="img/coffeeshop/1.png">
+			<div class="about__textbox">
+				<h1 class="about__title">
+					Кофейня
+				</h1>
+				<p class="about__description">
+					Какой-то текст.Какой-то текст.Какой-то текст.Какой-то текст.Какой-то текст.Какой-то текст.
+				</p>
+			</div>
+		</div>
+
+		<!------------------------------------------------------------------------
+			Блок 3. Наши кофейни. 
+			На самом деле, состоит из двух блоков:
+			 один из них - текст сверху (заголовок + эпиграф);
+			  второй блок - недвижимая галерея картинок с подписями.
+			Следует заметить, что первый блок будет повторно использован в будущем.
+		-------------------------------------------------------------------------->
+
+		<!--ВОПРОС---------------------------------------------------
+			Поскольку блок section в дальнейшем используется повторно,
+			 но с другим текстом, элементы должны принадлежать *ему*, 
+			  а не блоку about... ведь так?
+		------------------------------------------------------------->
+		
+		<div class="section">
+			<h1 class="section__title">НАШИ КОФЕЙНИ</h1>
+			<p class="section__epigraph">Варим качественный кофе в шаговой доступности от культурных мест г. Новосибирска!</p>
+		</div>	
+
+		<div class="coffeeshops">	
+			<div class="card">
+				<img class="card__image" src="img/coffeeshop/1.png">
+				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
+			</div>
+			<div class="card">
+				<img class="card__image" src="img/coffeeshop/2.png">
+				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
+			</div>
+			<div class="card">
+				<img class="card__image" src="img/coffeeshop/3.png">
+				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
+			</div>
+			<div class="card">
+				<img class="card__image" src="img/coffeeshop/4.png">
+				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
+			</div>
+		</div>
+		
+	</body> 
+</html>`
