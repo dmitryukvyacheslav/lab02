@@ -3,7 +3,8 @@
 	<head>
 		<title>Кофейня</title>
 		<meta charset="utf-8">
-	</head>~
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
 	<body>
 		<!-- Блок 1. Заголовок (чашка кофе, текст) -->
 		<div class="header">
@@ -36,12 +37,6 @@
 			Следует заметить, что первый блок будет повторно использован в будущем.
 		-------------------------------------------------------------------------->
 
-		<!--ВОПРОС---------------------------------------------------
-			Поскольку блок section в дальнейшем используется повторно,
-			 но с другим текстом, элементы должны принадлежать *ему*, 
-			  а не блоку about... ведь так?
-		------------------------------------------------------------->
-		
 		<div class="section">
 			<h1 class="section__title">НАШИ КОФЕЙНИ</h1>
 			<p class="section__epigraph">Варим качественный кофе в шаговой доступности от культурных мест г. Новосибирска!</p>
@@ -53,18 +48,206 @@
 				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
 			</div>
 			<div class="card">
-				<img class="card__image" src="img/coffeeshop/2.png">
+				<img class="card__image" src="img/coffeeshop/2.jpg">
 				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
 			</div>
 			<div class="card">
-				<img class="card__image" src="img/coffeeshop/3.png">
+				<img class="card__image" src="img/coffeeshop/3.jpg">
 				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
 			</div>
 			<div class="card">
-				<img class="card__image" src="img/coffeeshop/4.png">
+				<img class="card__image" src="img/coffeeshop/4.jpg">
 				<p class="card__text">Улица Пушкина Дом Колотушкина</p>
 			</div>
 		</div>
 		
+		<!------------------------------------------------------------------------
+			Блок 4. Гарантии
+		-------------------------------------------------------------------------->
+		<div class="guarantees">
+			<div class="iconcard" name="fast">
+				<img class="iconcard__icon" src="img/icons/fast.svg">
+				<h1 class="iconcard__title">ВАРИМ БЫСТРО</h1>
+				<p class="iconcard__text">Lorem ipsum dolor sit amet, consectetuer 
+					daipiscing elit. Aenean</p>
+			</div>
+			<div class="iconcard" name="safe">
+				<img class="iconcard__icon" src="img/icons/safe.png">
+				<h1 class="iconcard__title">ВАРИМ БЕЗОПАСНО</h1>
+				<p class="iconcard__text">Lorem ipsum dolor sit amet, consectetuer 
+					daipiscing elit. Aenean</p>
+			</div>
+			<div class="iconcard" name="near">
+				<img class="iconcard__icon" src="img/icons/near.svg">
+				<h1 class="iconcard__title">ВАРИМ РЯДОМ</h1>
+				<p class="iconcard__text">Lorem ipsum dolor sit amet, consectetuer 
+					daipiscing elit. Aenean</p>
+			</div>
+		</div>
+
+		<!------------------------------------------------------------------------
+			Блок 5. Галерея бариста
+		-------------------------------------------------------------------------->
+		<div class="barista">
+			<h1 class="barista__title">ДЛЯ ВАС ТРУДЯТСЯ ОПЫТНЫЕ БАРИСТА</h1>
+			<button class="barista__button">УЗНАТЬ БОЛЬШЕ</button>
+			<div class="triGallery">
+				<img class="triGallery__image" src="img/baristas/1.jpg">
+				<img class="triGallery__image" src="img/baristas/2.webp">
+				<img class="triGallery__image" src="img/baristas/3.jpg">
+			</div>
+		</div>
+		
+		<!------------------------------------------------------------------------
+			Блок 6. Галерея позиций
+		-------------------------------------------------------------------------->
+		<div class="section">
+			<h1 class="section__title">НАШИ ПОЗИЦИИ</h1>
+		</div>
+		<div class="store">	
+			<div class="product" name="americano">
+				<img class="product__image" src="img/products/americano.jpg">
+				<h1 class="product__name">Американо</h1>
+				<div class="prices">
+					<p class="product__price">50 руб.</p>
+					<p class="product__oldprice">100 руб.</p>
+				</div>
+			</div>
+			<div class="product" name="cappucino">
+				<img class="product__image" src="img/products/cappucino.jpg">
+				<h1 class="product__name">Капучино</h1>
+				<div class="prices">
+					<p class="product__price">100 руб.</p>
+					<p class="product__oldprice">200 руб.</p>
+				</div>
+			</div>
+			<div class="product" name="latte">
+				<img class="product__image" src="img/products/latte.jpg">
+				<h1 class="product__name">Латте</h1>
+				<div class="prices">
+					<p class="product__price">100 руб.</p>
+					<p class="product__oldprice">200 руб.</p>
+				</div>
+			</div>
+			<div class="product" name="flat-white">
+				<img class="product__image" src="img/products/flat-white.jpg">
+				<h1 class="product__name">Флет Уайт</h1>
+				<div class="prices">
+					<p class="product__price">100 руб.</p>
+					<p class="product__oldprice">200 руб.</p>
+				</div>
+			</div>
+		</div>
+
+		<!------------------------------------------------------------------------
+			Блок 7. Отзывы
+		-------------------------------------------------------------------------->
+		<div class="review">
+			<div class="review__content">
+				<h1>ОТЗЫВЫ ПОСЕТИТЕЛЕЙ</h1>
+				<h2>ЧЕСТНЫЕ ОБЗОРЫ</h2>
+				<div class="star-rating">
+					<img class="star-rating__star" src="img/review/star.svg">
+					<img class="star-rating__star" src="img/review/star.svg">
+					<img class="star-rating__star" src="img/review/star.svg">
+					<img class="star-rating__star" src="img/review/star.svg">
+					<img class="star-rating__star" src="img/review/star.svg">
+				</div>
+				<p class="review__text">
+					“We have perfected our formulas over time, based on your feedback. 
+					Check out hundreds of reviews on our website.We can't wait until 
+					you are a part of our Good4Me Family.”
+				</p>
+				<p class="review__name">
+					_Chloe H.
+				</p>
+				<div class="buttons">
+					<button class="buttons__left"><img src="img/review/leftarrow.svg"></button>
+					<button class="buttons__right"><img src="img/review/rightarrow.svg"></button>
+				</div>
+			</div>
+			<img class="review__image" src="img/review/1.png">
+		</div>
+
+		<!------------------------------------------------------------------------
+			Блок 8. Новости
+		-------------------------------------------------------------------------->
+		<div class="news">
+			<div class="news__title">
+				<h1>Последние новости</h1>
+				<h2>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+					Aenean commodo ligula eget dolor. 
+				</h2>
+				<a href="index.html">Посмотреть все <img src="img/rightarrow.svg"></a>
+				<div class="news__articles">
+					<div class="article">
+						<img class="article__image" src="img/news/1.png">
+						<h1 class="arcticle__title">We donate one weeks supply</h1>
+						<p class="arcticle__text">We care about New Zealand children, 
+							and we want to support our community by providing our children 
+							in need with necessary vitamins to improve....
+						</p>
+						<a href="index.html">Читать дальше <img src="img/rightarrow.svg"></a>
+					</div>
+					<div class="article">
+						<img class="article__image" src="img/news/2.png">
+						<h1 class="arcticle__title">We donate one weeks supply</h1>
+						<p class="arcticle__text">We care about New Zealand children, 
+							and we want to support our community by providing our children 
+							in need with necessary vitamins to improve....
+						</p>
+						<a href="index.html">Читать дальше <img src="img/rightarrow.svg"></a>
+					</div>
+					<div class="article">
+						<img class="article__image" src="img/news/3.png">
+						<h1 class="arcticle__title">We donate one weeks supply</h1>
+						<p class="arcticle__text">We care about New Zealand children, 
+							and we want to support our community by providing our children 
+							in need with necessary vitamins to improve....
+						</p>
+						<a href="index.html">Читать дальше <img src="img/rightarrow.svg"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!------------------------------------------------------------------------
+			Блок 9. Подвал
+		-------------------------------------------------------------------------->
+		<div class="footer">
+			<div class="content">
+				<p class="footer_text">Мы бережно относимся к вашему здоровью, 
+					поэтому все наши позиции приготовлены из лучших ингридиентов.
+				</p>
+				<div class="form">
+					<h1 class="footer__title">Будь на связи</h1>
+					<p class="footer_text">Подпишитесь на нашу рассылку,
+						чтобы получать все последние новости.
+					</p>
+					<div class="form">
+						<input class=footer__email type="email" size="32">
+						<button class="footer__subscribe">Подипсаться</button>
+					</div>
+				</div>
+				<div class="links">
+					<h1 class="footer__title">Больше информации</h1>
+					<a href="2gis.ru" class="footer__link" >Мы на 2ГИС</a>
+					<a href="flamp.ru" class="footer__link" >Мы на Флампе</a>
+					<a href="index.html" class="footer__link" >Связаться с нами</a>
+				</div>
+			</div>
+			<div class="logos">
+				<div class="footer_socials">
+					<a href="facebook.com"><img src="img/socials/fb.png"></a>
+					<a href="instagram.com"><img src="img/socials/ig.png"></a>
+					<a href="twitter.com"><img src="img/socials/tw.png"></a>
+					<a href="patreon.com"><img src="img/socials/pt.png"></a>
+					<a href="youtube.com"><img src="img/socials/yt.png"></a>
+				</div>
+				<p class="footer_copyright">(c) 2023, Vyacheslav Dmitryuk</p>
+				<img class="footer_cards" src="img/cards.png">
+			</div>
+		</div>
 	</body> 
 </html>`
