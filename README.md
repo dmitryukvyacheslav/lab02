@@ -1,4 +1,3 @@
 # lab02
 Лабы за второй курс
-
-https://www.youtube.com/watch?v=E0h8BUUboP0
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/E0h8BUUboP0/0.jpg)](https://www.youtube.com/watch?v=E0h8BUUboP0)
