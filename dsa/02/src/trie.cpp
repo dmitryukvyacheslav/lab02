@@ -45,14 +45,56 @@ Trie::trie* Trie::set_child(trie* node, char c, trie* child) {
     }
 }
 
-Trie::trie* Trie::insert(const std::string& key, int value) {
+Trie::trie* Trie::insert(const char* key, int value) {
     static trie* node = root;   /* start from the root*/
-    for(char c : key) {
-        static trie* child = get_child(node, c); /* is there such a character? -> */
+    int i = 0;
+    while(key[i] != '\0') {
+        static trie* child = get_child(node, key[i]); /* is there such a character? -> */
         if (!child) 
             child = create_node();
-            set_child(node, c, child);
+            set_child(node, key[i], child);
         node = child; 
     }
     node->value = value;
+}
+
+Trie::trie* Trie::remove_dfs(trie* rt, trie* parent, char* key, int* found) {
+    trie* node = nullptr;
+    trie* prev = nullptr;
+
+    // если дерево или ключ пустые, нет смысла что-то делать
+    *found = (*key == '\0' && rt == NULL) ? 1 : 0;
+    if (*key == '\0' || rt == NULL)
+        return rt;
+
+    // поиск буквы ключа
+    for (node = rt; node != nullptr; node = node->sibling) {
+        if (node->ch == *key)
+            break;
+        prev = node;            
+    }
+    if (node == nullptr)
+        return rt; // не нашли букву
+
+    remove_dfs(node->child, node, key+1, found);
+    
+    if (*found > 0 && node->child == NULL) {
+        // дошли до конца, такой ключ есть - сносим его
+        if (prev != nullptr)
+            prev->sibling = node->sibling;
+        else {
+            if (parent != nullptr)
+                parent->child = node->sibling;
+            else
+                rt = node->sibling;
+        }
+        free(node);
+    }
+    return rt;
+}
+
+Trie::trie* Trie::remove(char* key){
+    int found;
+    root = remove_dfs(root, NULL, key, &found);
+    return root;
 }
