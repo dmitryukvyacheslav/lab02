@@ -18,7 +18,6 @@
 		
 		<!-- Блок 2. Справочный блок на фоне размытой картинки-->
 		<div class="about">
-			<img class="about__background" src="img/coffeeshop/1.png">
 			<div class="about__textbox">
 				<h1 class="about__title">
 					Кофейня
@@ -38,7 +37,7 @@
 		-------------------------------------------------------------------------->
 
 		<div class="section">
-			<h1 class="section__title">НАШИ КОФЕЙНИ</h1>
+			<h1 class="section__title">НАШИ КОФЕЙНИ</h1><br>
 			<p class="section__epigraph">Варим качественный кофе в шаговой доступности от культурных мест г. Новосибирска!</p>
 		</div>	
 
@@ -65,7 +64,7 @@
 			Блок 4. Гарантии
 		-------------------------------------------------------------------------->
 		<div class="guarantees">
-			<div class="iconcard" name="fast">
+			<div class="iconcard">
 				<img class="iconcard__icon" src="img/icons/fast.svg">
 				<h1 class="iconcard__title">ВАРИМ БЫСТРО</h1>
 				<p class="iconcard__text">Lorem ipsum dolor sit amet, consectetuer 
@@ -79,7 +78,7 @@
 			</div>
 			<div class="iconcard" name="near">
 				<img class="iconcard__icon" src="img/icons/near.svg">
-				<h1 class="iconcard__title">ВАРИМ РЯДОМ</h1>
+				<h1 class="iconcard__title">ВАРИМ РЯДОМ </h1>
 				<p class="iconcard__text">Lorem ipsum dolor sit amet, consectetuer 
 					daipiscing elit. Aenean</p>
 			</div>
@@ -89,8 +88,10 @@
 			Блок 5. Галерея бариста
 		-------------------------------------------------------------------------->
 		<div class="barista">
-			<h1 class="barista__title">ДЛЯ ВАС ТРУДЯТСЯ ОПЫТНЫЕ БАРИСТА</h1>
-			<button class="barista__button">УЗНАТЬ БОЛЬШЕ</button>
+			<div class="barista__description">
+				<h1 class="barista__title">ДЛЯ ВАС ТРУДЯТСЯ ОПЫТНЫЕ БАРИСТА</h1>
+				<button class="barista__button">УЗНАТЬ БОЛЬШЕ</button>
+			</div>
 			<div class="triGallery">
 				<img class="triGallery__image" src="img/baristas/1.jpg">
 				<img class="triGallery__image" src="img/baristas/2.webp">
@@ -144,8 +145,8 @@
 		-------------------------------------------------------------------------->
 		<div class="review">
 			<div class="review__content">
-				<h1>ОТЗЫВЫ ПОСЕТИТЕЛЕЙ</h1>
-				<h2>ЧЕСТНЫЕ ОБЗОРЫ</h2>
+				<h1 class="review_title">ОТЗЫВЫ ПОСЕТИТЕЛЕЙ</h1>
+				<h2 class="review_subtitle">ЧЕСТНЫЕ ОБЗОРЫ</h2>
 				<div class="star-rating">
 					<img class="star-rating__star" src="img/review/star.svg">
 					<img class="star-rating__star" src="img/review/star.svg">
@@ -154,16 +155,14 @@
 					<img class="star-rating__star" src="img/review/star.svg">
 				</div>
 				<p class="review__text">
-					“We have perfected our formulas over time, based on your feedback. 
-					Check out hundreds of reviews on our website.We can't wait until 
-					you are a part of our Good4Me Family.”
+					“Я не знаю, что сюда писать, этот текст тут все равно сто раз будет меняться, наверное, скриптом.”
 				</p>
 				<p class="review__name">
-					_Chloe H.
+					_Вячеслав Д.
 				</p>
-				<div class="buttons">
-					<button class="buttons__left"><img src="img/review/leftarrow.svg"></button>
-					<button class="buttons__right"><img src="img/review/rightarrow.svg"></button>
+				<div class="button-container">
+					<button class="button"><img class="button__image" src="img/review/leftarrow.svg"></button>
+					<button class="button"><img class="button__image" src="img/review/rightarrow.svg"></button>
 				</div>
 			</div>
 			<img class="review__image" src="img/review/1.png">
@@ -174,39 +173,47 @@
 		-------------------------------------------------------------------------->
 		<div class="news">
 			<div class="news__title">
-				<h1>Последние новости</h1>
-				<h2>
-					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-					Aenean commodo ligula eget dolor. 
-				</h2>
-				<a href="index.html">Посмотреть все <img src="img/rightarrow.svg"></a>
+				<h1 class="news__heading">Последние новости</h1>
+				<div class="subheading">
+					<p class="subheading__text">
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+						Aenean commodo ligula eget dolor.
+					</p>
+					<div class="subheading_arrowLink">
+						<a class="read-more" href="index.html"> Посмотреть все <img class="rightarrow" src="img/rightarrow.svg"> </a>
+
+					</div>
+				</div>
+
+
+				</a>
 				<div class="news__articles">
 					<div class="article">
 						<img class="article__image" src="img/news/1.png">
-						<h1 class="arcticle__title">We donate one weeks supply</h1>
-						<p class="arcticle__text">We care about New Zealand children, 
+						<h1 class="article__title">We donate one weeks supply</h1>
+						<p class="article__text">We care about New Zealand children,
 							and we want to support our community by providing our children 
 							in need with necessary vitamins to improve....
 						</p>
-						<a href="index.html">Читать дальше <img src="img/rightarrow.svg"></a>
+						<a class="read-more" href="index.html">Читать дальше <img class="rightarrow" src="img/rightarrow.svg"></a>
 					</div>
 					<div class="article">
 						<img class="article__image" src="img/news/2.png">
-						<h1 class="arcticle__title">We donate one weeks supply</h1>
-						<p class="arcticle__text">We care about New Zealand children, 
+						<h1 class="article__title">We donate one weeks supply</h1>
+						<p class="article__text">We care about New Zealand children,
 							and we want to support our community by providing our children 
 							in need with necessary vitamins to improve....
 						</p>
-						<a href="index.html">Читать дальше <img src="img/rightarrow.svg"></a>
+						<a class="read-more" href="index.html">Читать дальше <img class="rightarrow" src="img/rightarrow.svg"></a>
 					</div>
 					<div class="article">
 						<img class="article__image" src="img/news/3.png">
-						<h1 class="arcticle__title">We donate one weeks supply</h1>
-						<p class="arcticle__text">We care about New Zealand children, 
+						<h1 class="article__title">We donate one weeks supply</h1>
+						<p class="article__text">We care about New Zealand children,
 							and we want to support our community by providing our children 
 							in need with necessary vitamins to improve....
 						</p>
-						<a href="index.html">Читать дальше <img src="img/rightarrow.svg"></a>
+						<a class="read-more" href="index.html">Читать дальше <img class="rightarrow" src="img/rightarrow.svg"></a>
 					</div>
 				</div>
 			</div>
@@ -217,12 +224,12 @@
 		-------------------------------------------------------------------------->
 		<div class="footer">
 			<div class="content">
-				<p class="footer_text">Мы бережно относимся к вашему здоровью, 
+				<p class="footer__text">Мы бережно относимся к вашему здоровью,
 					поэтому все наши позиции приготовлены из лучших ингридиентов.
 				</p>
 				<div class="form">
 					<h1 class="footer__title">Будь на связи</h1>
-					<p class="footer_text">Подпишитесь на нашу рассылку,
+					<p class="footer__text">Подпишитесь на нашу рассылку,
 						чтобы получать все последние новости.
 					</p>
 					<div class="form">
@@ -232,21 +239,21 @@
 				</div>
 				<div class="links">
 					<h1 class="footer__title">Больше информации</h1>
-					<a href="2gis.ru" class="footer__link" >Мы на 2ГИС</a>
-					<a href="flamp.ru" class="footer__link" >Мы на Флампе</a>
+					<a href="https://2gis.ru" class="footer__link" >Мы на 2ГИС</a>
+					<a href="https://flamp.ru" class="footer__link" >Мы на Флампе</a>
 					<a href="index.html" class="footer__link" >Связаться с нами</a>
 				</div>
 			</div>
 			<div class="logos">
-				<div class="footer_socials">
-					<a href="facebook.com"><img src="img/socials/fb.png"></a>
-					<a href="instagram.com"><img src="img/socials/ig.png"></a>
-					<a href="twitter.com"><img src="img/socials/tw.png"></a>
-					<a href="patreon.com"><img src="img/socials/pt.png"></a>
-					<a href="youtube.com"><img src="img/socials/yt.png"></a>
+				<div class="footer__socials">
+					<a href="https://facebook.com"><img src="img/socials/fb.png"></a>
+					<a href="https://instagram.com"><img src="img/socials/ig.png"></a>
+					<a href="https://twitter.com"><img src="img/socials/tw.png"></a>
+					<a href="https://patreon.com"><img src="img/socials/pt.png"></a>
+					<a href="https://youtube.com"><img src="img/socials/yt.png"></a>
 				</div>
-				<p class="footer_copyright">(c) 2023, Vyacheslav Dmitryuk</p>
-				<img class="footer_cards" src="img/cards.png">
+				<p class="footer__copyright">(c) 2023, Vyacheslav Dmitryuk</p>
+				<img class="footer__cards" src="img/cards.png">
 			</div>
 		</div>
 	</body> 

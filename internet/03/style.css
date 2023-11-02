@@ -1,0 +1,387 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    margin: 0;
+}
+
+
+/* Блок 1. Заголовок (чашка кофе, текст) */
+.header__logoname {
+    display: flex;
+    margin-left: 3%;
+    gap: 1%;
+    height: 100px;
+}
+.header__name {
+    color: orangered;
+    font-size: 32px;
+}
+
+
+/*  Блок 2. Справочный блок на фоне размытой картинки
+    Я сдался, пытаясь сделать блюр фона.
+    Текстбоксу становилось плохо */
+
+.about {
+    padding: 5%;
+    object-fit: contain;
+    background-image: url('img/coffeeshop/1.png');
+    background-size: cover;
+    background-position: 0 -300px;
+
+
+}
+
+@keyframes slidein_left {
+    from {
+        margin-right: 100%;
+        margin-left: -30%;
+    }
+
+    to {
+
+    }
+}
+.about__textbox{
+    padding: 1%;
+    margin-right: 70%;
+    background-color: white;
+    border-style: solid;
+    border-color: black;
+    animation: 1s 1 alternate slidein_left;
+}
+
+.about__title{
+    margin:2%;
+    color: orangered;
+}
+
+.about__description {
+    margin:2%;
+    font-size: 12pt;
+}
+
+/* Блок 2.5. Разделитель */
+.section {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.section__title {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+.section__title::before, .section__title::after {
+    flex: 1;
+    content: '';
+    padding: 3px;
+    background-color: orangered;
+}
+
+.section__title::before{
+    margin-left: 30%;
+    margin-right: 1%;
+}
+
+.section__title::after{
+    margin-right: 30%;
+    margin-left: 1%;
+}
+.section__epigraph {
+    text-align: center;
+}
+
+/* Блок 3. Галерея кофеен */
+.coffeeshops{
+    margin:auto;
+    transition: transform .2s;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.card {
+    flex-basis: 200px;
+    transition: flex .3s;
+}
+
+.card__text {
+    text-align: center;
+}
+.card__image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    max-width: 250px;
+    height: 200px;
+    vertical-align: middle;
+    border-radius: 5px;
+    transition: transform .3s;
+}
+
+.card:hover {
+    flex: 1 1 375px;
+}
+
+.card__image:hover {
+    transform: scale(1.6);
+}
+
+/* Блок 4. Гарантии */
+.guarantees {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    margin: 5%;
+}
+
+.iconcard__title {
+    font-size: 22px;
+}
+
+.iconcard__text {
+    font-size: 16px;
+}
+.iconcard__icon {
+    max-height: 100px;
+    display: block;
+    margin: auto;
+}
+
+/* Блок 5. Галерея бариста */
+.barista {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.barista__title{
+    padding-right: 70%;
+}
+
+.barista__title{
+    letter-spacing: 1px;
+}
+
+.barista__button{
+
+    border-style: solid;
+    border-color: orangered;
+    background-color: white;
+    width: 40%;
+    height: 10%;
+    transition: background-color 100ms;
+}
+.barista__button:hover{
+    background-color: lightgray;
+}
+.barista__button:active{
+    background-color: darkgray;
+}
+
+
+.triGallery {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 200px 200px;
+    gap: 10px;
+}
+
+.triGallery__image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.triGallery__image:first-child {
+    grid-column: 2;
+    grid-row: 1 / 2;
+    height: 410px;
+}
+
+/* Блок 6. Галерея позиций */
+.store{
+    margin:auto;
+    transition: transform .2s;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+.product {
+    flex-basis: 250px; /* width: 350px; */
+}
+.product__name {
+    text-align: center;
+    margin-bottom: 0;
+}
+.product__image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    max-width: 100%;
+    height: 200px;
+    width: 300px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.prices {
+    display: inline-flex;
+    gap: 10px;
+    justify-content: center;
+    vertical-align: auto;
+}
+.product__price {
+    margin-top:6px;
+    color: orangered;
+}
+
+.product__oldprice {
+    margin-top:6px;
+    text-decoration: line-through;
+}
+
+/* Блок 7. Отзывы */
+.review {
+    margin-top: 5%;
+    display:flex;
+    background-color: #FEF0E7;
+    padding: 5% 15%;
+    align-content: space-between;
+    gap: 10%
+}
+.review__image {
+
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button {
+    padding: 0px;
+    background: none;
+    border: none;
+    height: 40px;
+    width: 40px;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: orange;
+}
+.button:active {
+    background: orangered;
+}
+.button__image{
+    height: 40px;
+}
+
+.star-rating{
+    display: inline-flex;
+    gap: 5px;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.review_subtitle {
+    color: orangered;
+}
+.star-rating__star{
+    max-width: 30px;
+}
+.review__image {
+    height: 400px;
+}
+
+/* Блок 8. Новости */
+.news {
+    padding: 5% 10%;
+    margin: auto;
+
+}
+.news__articles {
+    align-content: center;
+    justify-content: center;
+
+}
+.subheading {
+    display: flex;
+    vertical-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+.news__articles {
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.article__image{
+    width: 100%;
+}
+
+.subheading__text {
+    font-size: 16px;
+    color: gray;
+}
+.subheading__link {
+    color: orangered;
+}
+
+.read-more {
+    color: orangered;
+}
+.article__text{
+    color: gray;
+}
+.rightarrow {
+    height: 20px;
+    vertical-align: bottom;
+}
+
+/* Блок 9. Подвал */
+.footer {
+    background-color: #FFF8F6;
+}
+.content {
+    margin: 0% 10%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10%;
+    align-items: center;
+
+}
+.footer__text {
+    flex-basis: 33%;
+}
+
+.logos{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.footer__cards {
+
+}
+.footer__copyright {
+    margin: 0% 0%;
+}
+
+
+
+
