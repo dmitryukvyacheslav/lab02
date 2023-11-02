@@ -1,5 +1,6 @@
-project('d7trie', 'c')
+project('d7trie', 'cpp')
 src = []
-src += 'src/main.c'
-src += 'src/trie.c'
-executable('d7trie', src)
+src += 'src/main.cpp'
+src += 'src/trie.cpp'
+incdir = include_directories('src')
+executable('d7trie', src, include_directories: incdir)

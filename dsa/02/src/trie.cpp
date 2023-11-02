@@ -2,7 +2,6 @@
 
 Trie::trie* Trie::create_node(){
     trie *node = new trie;
-    return NULL;
     node->ch = '\0';
     node->value = NULL;
     node->sibling = NULL;
@@ -10,10 +9,12 @@ Trie::trie* Trie::create_node(){
     return node;
 }
 
+
 Trie::trie* Trie::get_child(trie* node, char c) {
     // node->child - связный список
     // у одного из его элементов должна быть буква c
-    static Trie::trie* ll_item = node->child;
+    if (!node->child) return nullptr;
+    Trie::trie* ll_item = node->child;
     while (ll_item)
         if (ll_item->ch == c) return ll_item;
         else ll_item = ll_item->sibling; 
@@ -23,7 +24,7 @@ Trie::trie* Trie::get_child(trie* node, char c) {
 Trie::trie* Trie::set_child(trie* node, char c, trie* child) {
     // node->child - связный список
     // в него надо добавить ноду child c буквой c
-    static Trie::trie* ll_item = node->child;
+    Trie::trie* ll_item = node->child;
     
     // что если детей нет и список надо создать?
     if (!ll_item) {
@@ -43,22 +44,26 @@ Trie::trie* Trie::set_child(trie* node, char c, trie* child) {
         ll_item->sibling = child;
         ll_item->sibling->ch = c;
     }
+    return ll_item;
 }
 
 Trie::trie* Trie::insert(const char* key, int value) {
-    static trie* node = root;   /* start from the root*/
+    trie* node = root;   /* start from the root*/
     int i = 0;
     while(key[i] != '\0') {
-        static trie* child = get_child(node, key[i]); /* is there such a character? -> */
+        trie* child = get_child(node, key[i]); /* is there such a character? -> */
         if (!child) 
             child = create_node();
             set_child(node, key[i], child);
         node = child; 
+        child = nullptr;
+        i++;
     }
     node->value = value;
+    return node;
 }
 
-Trie::trie* Trie::remove_dfs(trie* rt, trie* parent, char* key, int* found) {
+Trie::trie* Trie::remove_dfs(trie* rt, trie* parent, const char* key, int* found) {
     trie* node = nullptr;
     trie* prev = nullptr;
 
@@ -88,13 +93,53 @@ Trie::trie* Trie::remove_dfs(trie* rt, trie* parent, char* key, int* found) {
             else
                 rt = node->sibling;
         }
+  
         free(node);
     }
     return rt;
 }
 
-Trie::trie* Trie::remove(char* key){
+Trie::trie* Trie::remove(const char* key){
     int found;
-    root = remove_dfs(root, NULL, key, &found);
+    remove_dfs(root->child, root, key, &found);
     return root;
+}
+
+Trie::trie* Trie::lookup(const char* key){
+    trie* node = root;
+    int i = 0;
+    while(key[i] != '\0') {
+        trie* child = get_child(node, key[i]); /* is there such a character? -> */
+        if (!child) 
+            return nullptr;
+        node = child;
+        i++;
+    }
+    if (node->value == NULL) 
+        return nullptr;
+    return node;
+}
+
+void Trie::traverse(std::string& prefix, trie* node) {
+    if (node->value)
+        printf("%s\t[%d]\n", prefix.c_str(), node->value);
+
+    for (char index = 0; index < 26; ++index) {
+        char next = 'a' + index;
+        trie* pChild = get_child(node, next);
+        if (pChild) {
+            prefix.push_back(next);
+            traverse(prefix, pChild);
+            prefix.pop_back();
+        }
+    }
+}
+
+void Trie::print() {
+    std::string pfx;
+    traverse(pfx, root);
+}
+
+Trie::Trie() {
+    root = create_node();
 }
