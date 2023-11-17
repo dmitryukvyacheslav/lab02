@@ -1,16 +1,30 @@
 #include <fibheap.hpp>
 #include <cstdio>
 int main(void) {
-	fh_node* heap = nullptr;
+	fibheap* heap = new fibheap;
+	heap->min = 0;
+	heap->nnodes = 0;
 
-	char* strings[] = { "shield", "spear", "sword", "bow", "chariot", "potion", "magic", "blaze" };
-	for (int i = 0; i < 8; i++) {
-		heap = fibheap_insert(heap, i, strings[i]);	// Correct
+	fibheap* heap2 = new fibheap;
+	heap2->min = 0;
+	heap2->nnodes = 0;
+
+	char* strings[] = { "zero", "one", "two", "three"};
+	char* strings2[] = { "I", "II", "III", "IV" };
+	for (int i = 0; i < 4; i++) {
+		insert(heap, i, strings[i]);	// Correct
+		insert(heap2, i, strings2[i]);	// Correct
 	}
+
+	heap = join(heap, heap2);
+
 	for (int i = 0; i < 8; i++) {
-		fh_node* a = fibheap_min(heap);				// Correct
-		printf("%s[%d]\n", a->value, a->key);
-		delete fibheap_delete_min(heap);
+		fh_node* min = heap->min;
+		printf("%s[%d]\n", min->value, min->key);
+		remove(heap, min);
 	}
+
+	// gg no re
+	// i want to have nothing to do with this anymore
 	return 0;
 }
